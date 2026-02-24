@@ -20,3 +20,6 @@ fzf
 zoxide
 resvg
 imagemagick
+tmux
+bc
+coreutils
