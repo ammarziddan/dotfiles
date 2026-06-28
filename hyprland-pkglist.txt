@@ -1,0 +1,9 @@
+hyprland
+hypridle
+hyprlock
+hyprpaper
+rofi
+swaync
+swayosd
+waybar
+wlogout
