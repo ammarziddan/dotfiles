@@ -1,0 +1,95 @@
+* {
+  background-image: none;
+  box-shadow: none;
+  font-size: 1rem;
+}
+
+window {
+  background-color: rgba(21, 22, 30, 0.7);
+}
+
+button {
+  margin: 16px;
+  border: 0.6px solid rgba(255, 255, 255, 0.15);
+  border-radius: 28px;
+  text-decoration-color: #ffffff;
+  color: #c0caf5;
+  background-color: rgba(59, 66, 97, 0.5);
+  background-repeat: no-repeat;
+  background-position: center calc(50% - 4px);
+  background-size: 64px 64px;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    inset 0 0.6px 1.4px rgba(255, 255, 255, 0.25),
+    rgba(0, 0, 0, 0.65) 0px 8px 10px -13px;
+
+  transition: all 0.2s ease-in-out;
+}
+
+button:focus,
+button:active,
+button:hover {
+  background-color: #7aa2f7;
+  color: #1a1b26;
+  outline-style: none;
+}
+
+#lock {
+  background-image: image(url("icons/lock-light.svg"));
+}
+#lock:focus,
+#lock:active,
+#lock:hover {
+  background-image: image(url("icons/lock-dark.svg"));
+  background-size: 72px 72px;
+}
+
+#logout {
+  background-image: image(url("icons/logout-light.svg"));
+}
+#logout:focus,
+#logout:active,
+#logout:hover {
+  background-image: image(url("icons/logout-dark.svg"));
+  background-size: 72px 72px;
+}
+
+#suspend {
+  background-image: image(url("icons/suspend-light.svg"));
+}
+#suspend:focus,
+#suspend:active,
+#suspend:hover {
+  background-image: image(url("icons/suspend-dark.svg"));
+  background-size: 72px 72px;
+}
+
+#hibernate {
+  background-image: image(url("icons/hibernate-light.svg"));
+}
+#hibernate:focus,
+#hibernate:active,
+#hibernate:hover {
+  background-image: image(url("icons/hibernate-dark.svg"));
+  background-size: 72px 72px;
+}
+
+#shutdown {
+  background-image: image(url("icons/shutdown-light.svg"));
+}
+#shutdown:focus,
+#shutdown:active,
+#shutdown:hover {
+  background-image: image(url("icons/shutdown-dark.svg"));
+  background-size: 72px 72px;
+}
+
+#reboot {
+  background-image: image(url("icons/reboot-light.svg"));
+}
+#reboot:focus,
+#reboot:active,
+#reboot:hover {
+  background-image: image(url("icons/reboot-dark.svg"));
+  background-size: 72px 72px;
+}

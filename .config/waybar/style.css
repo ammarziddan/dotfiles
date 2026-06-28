@@ -1,0 +1,158 @@
+/* @import "colors/one-dark.css"; */
+@import "colors/tokyonight.css";
+
+* {
+  font-family: "SF Pro Text", "JetBrainsMono Nerd Font Propo", monospace;
+  font-weight: 500;
+  font-size: 13px;
+
+  border: none;
+  border-radius: 0;
+
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+window#waybar {
+  background: transparent;
+}
+
+tooltip {
+  background: @bg0;
+  border: 1px solid @bg3;
+  border-radius: 12px;
+}
+
+tooltip label {
+  color: @fg;
+  padding: 6px;
+}
+
+#workspaces {
+  background-color: @bg0;
+  padding: 3px 4px;
+  margin: 10px 0 0 10px;
+  border-radius: 18px;
+  border: 1px solid @bg1;
+  color: @fg;
+}
+
+#workspaces button {
+  all: unset;
+  padding: 2px 8px;
+  border-radius: 50px;
+  color: @fg;
+  background-color: @bg4;
+  transition: all 0.2s ease-in-out;
+}
+
+#workspaces button * {
+  min-width: 10px;
+}
+
+#workspaces button:not(:first-child) {
+  margin-left: 6px;
+}
+
+#workspaces button label {
+  font-weight: 700;
+}
+
+#workspaces button.active {
+  background-color: @blue;
+  color: @bg0;
+}
+
+#workspaces button:hover {
+  background-color: @purple;
+  color: @bg0;
+  border-radius: 16px;
+  background-size: 400% 400%;
+}
+
+#workspaces button.urgent {
+  background-color: @red;
+  color: @bg0;
+  border-radius: 16px;
+  background-size: 400% 400%;
+}
+
+#window,
+#battery,
+#power-profiles-daemon,
+#pulseaudio,
+#network,
+#clock,
+#custom-notification,
+#custom-power {
+  background-color: @bg0;
+  padding: 0 15px;
+  margin: 10px 10px 0 0;
+  border-radius: 50px;
+  border: 1px solid @bg1;
+}
+
+#window {
+  background-color: transparent;
+  border: none;
+  color: #ffffff;
+}
+#window label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+#power-profiles-daemon.power-saver {
+  color: @green;
+}
+
+#power-profiles-daemon.balanced {
+  color: @blue;
+}
+
+#power-profiles-daemon.performance {
+  color: @red;
+}
+
+#power-profiles-daemon {
+  border-right: none;
+  border-radius: 50px 0 0 50px;
+  margin-right: 0;
+  padding-right: 10px;
+}
+
+#battery {
+  border-left: none;
+  border-radius: 0 50px 50px 0;
+  color: @green;
+  padding-left: 0;
+}
+
+#battery.warning:not(.charging) {
+  color: @yellow;
+}
+#battery.critical:not(.charging) {
+  color: @red;
+}
+
+#clock {
+  color: @blue;
+}
+
+#custom-notification {
+  color: @fg;
+}
+
+#pulseaudio {
+  color: @yellow;
+}
+
+#network {
+  color: @purple;
+}
+
+#custom-power {
+  color: @red;
+  padding: 0 10px;
+}

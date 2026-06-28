@@ -1,0 +1,14 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Fonts
+ *
+ **/
+
+// Fonts: JetBrainsMono Nerd Font Propo (nerd icon), Adwaita Sans, Inter
+
+* {
+    font: "SF Pro Text 12";
+}

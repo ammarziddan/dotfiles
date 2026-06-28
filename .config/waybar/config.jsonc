@@ -1,0 +1,161 @@
+// -*- mode: jsonc -*-
+{
+  // "layer": "top", // Waybar at top layer
+  // "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 30, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  "spacing": 0, // Gaps between modules (4px)
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "hyprland/window"
+  ],
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "power-profiles-daemon",
+    "battery",
+    "clock",
+    "custom/notification",
+    "custom/power"
+  ],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-scroll-up": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"+1\" })'",
+    "on-scroll-down": "hyprctl dispatch 'hl.dsp.focus({ workspace = \"-1\" })'"
+  },
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 38
+  },
+  "clock": {
+    "format": "{:%a %e %b %H:%M}",
+    "tooltip-format": "<tt><big>{calendar}</big></tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#bb9af7'><big>{}</big></span>",
+        "days": "<span color='#a9b1d6'><b>{}</b></span>",
+        "weeks": "<span color='#7dcfff'><b>W{}</b></span>",
+        "weekdays": "<span color='#7aa2f7'><b>{}</b></span>",
+        "today": "<span color='#f7768e'><b>{}</b></span>"
+      }
+    },
+    "actions": {
+      "on-scroll-up": "shift_down",
+      "on-scroll-down": "shift_up"
+    }
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "",
+    "tooltip-format": "Brightness: {percent}%"
+    // "format-icons": [
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   "",
+    //   ""
+    // ]
+  },
+  "battery": {
+    "states": {
+      // "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{capacity}% <span size='14pt' rise='-1500'>{icon}</span>",
+    "format-full": "{capacity}% <span size='14pt' rise='-1500'>{icon}</span>",
+    "format-charging": "{capacity}% <span size='14pt' rise='-1500'>{icon}</span> ",
+    "format-plugged": "{capacity}% <span size='14pt' rise='-1500'>{icon}</span> ",
+    "format-alt": "{time} <span size='14pt' rise='-1500'>{icon}</span>",
+    // "format-good": "", // An empty format will hide the module
+    // "format-full": "",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "",
+      "performance": "<span size='11pt'>󱓞</span>",
+      "balanced": "<span size='11pt'>󰾅</span>",
+      "power-saver": ""
+    }
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "",
+    "format-ethernet": "󰈀",
+    "format-linked": "",
+    "format-disconnected": "",
+    "tooltip-format": "{ifname} via {gwaddr}  ",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)  ",
+    "tooltip-format-ethernet": "Ethernet  󰈀",
+    "tooltip-format-disconnected": "No Internet  ",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}%  {icon}",
+    "format-bluetooth": "{volume}%  {icon} ",
+    "format-bluetooth-muted": "󰅶  {icon}",
+    "format-muted": "",
+    "format-source": "",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "<span size='12pt'>{icon}</span>",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+  "custom/power": {
+    "format": "<span size='12pt'>⏻</span>",
+    "tooltip": false,
+    "on-click": "wlogout"
+  }
+}
